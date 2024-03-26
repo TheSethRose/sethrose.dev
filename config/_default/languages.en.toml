@@ -1,0 +1,64 @@
+languageCode = "en"
+languageName = "English"
+languageDirection = "ltr"
+weight = 1
+
+title = "Seth Rose"
+copyright = "&copy; 2024. Seth Rose. All Rights Reserved."
+
+[params]
+dateFormat = "2 January 2006"
+description = "My awesome website"
+# mainSections = ["section1", "section2"]
+
+[params.author]
+name = "Seth Rose"
+image = "img/profile.png"
+headline = "Turning caffeine into code</br>while trying not to break the internet."
+bio = "When I'm not battling corporate inefficiencies or integrating systems that were never meant to talk to each other, you'll catch me on 𝕏 (Twitter), discussing the latest advancements in AI & machine learning, and their potential to revolutionize industries. I'm always sharpening my skills in full stack development or #buildinpublic - because why not add a few more programming languages to the mix? My secret weapons are my ADHD-fueled brain, a steady stream of caffeine, and an undying love for solving problems that make mere mortals cry."
+links = [
+  { x-twitter = "https://x.com/TheSethRose" },
+  { email = "mailto:admin@sethrose.dev" },
+  { slack = "https://sndevs.slack.com/team/U9K4QSAL9" },
+  { discord = "https://discord.com/users/727661087599624242" },
+  { web = "https://sethrose.dev" },
+  { linkedin = "https://www.linkedin.com/in/sethlrose/" },
+  #   { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
+  #   { apple = "https://www.apple.com" },
+  #   { blogger = "https://username.blogspot.com/" },
+  #   { codepen = "https://codepen.io/username" },
+  #   { dev = "https://dev.to/username" },
+  #   { dribbble = "https://dribbble.com/username" },
+  #   { facebook = "https://facebook.com/username" },
+  #   { flickr = "https://www.flickr.com/photos/username/" },
+  #   { foursquare = "https://foursquare.com/username" },
+  #   { github = "https://github.com/username" },
+  #   { gitlab = "https://gitlab.com/username" },
+  #   { google = "https://www.google.com/" },
+  #   { google-scholar = "https://scholar.google.com/citations?user=user-id" },
+  #   { hashnode = "https://username.hashnode.dev" },
+  #   { instagram = "https://instagram.com/username" },
+  #   { keybase = "https://keybase.io/username" },
+  #   { kickstarter = "https://www.kickstarter.com/profile/username" },
+  #   { lastfm = "https://lastfm.com/user/username" },
+  #   { link = "https://link-to-some-website.com/" },
+  #   { mastodon = "https://mastodon.instance/@username" },
+  #   { medium = "https://medium.com/username" },
+  #   { mendeley = "https://www.mendeley.com/" },
+  #   { microsoft = "https://www.microsoft.com/" },
+  #   { orcid = "https://orcid.org/userid" },
+  #   { patreon = "https://www.patreon.com/username" },
+  #   { pinterest = "https://pinterest.com/username" },
+  #   { reddit = "https://reddit.com/user/username" },
+  #   { researchgate = "https://www.researchgate.net/profile/username" },
+  #   { snapchat = "https://snapchat.com/add/username" },
+  #   { soundcloud = "https://soundcloud.com/username" },
+  #   { stack-overflow = "https://stackoverflow.com/users/userid/username" },
+  #   { steam = "https://steamcommunity.com/profiles/userid" },
+  #   { telegram = "https://t.me/username" },
+  #   { tiktok = "https://tiktok.com/@username" },
+  #   { tumblr = "https://username.tumblr.com" },
+  #   { twitch = "https://twitch.tv/username" },
+  #   { whatsapp = "https://wa.me/phone-number" },
+  #   { youtube = "https://youtube.com/username" },
+]
