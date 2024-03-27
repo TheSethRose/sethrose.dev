@@ -1,0 +1,29 @@
+# Generated files by Hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary lock file while building
+/.hugo_build.lock
+
+# Node.js dependencies
+node_modules/
+
+# macOS folder attributes
+.DS_Store
+
+# Vim swap files
+*.swp
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Local Netlify folder
+.netlify
