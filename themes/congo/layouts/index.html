@@ -1,8 +1,15 @@
 {{ define "main" }}
   {{ $partial := print "partials/home/" .Site.Params.homepage.layout ".html" }}
   {{ if templates.Exists $partial }}
+    {{/* Load homepage partials */}}
     {{ partial $partial . }}
-  {{ else }}
+  {{ else if templates.Exists "partials/home/page.html" }}
     {{ partial "partials/home/page.html" . }}
+  {{ else }}
+    {{/* Fallback content when no homepage partials are found */}}
+    <article class="prose dark:prose-invert">
+      <h1>Welcome to {{ .Site.Title }}</h1>
+      <p>No homepage layout found.</p>
+    </article>
   {{ end }}
 {{ end }}

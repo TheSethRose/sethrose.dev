@@ -24,23 +24,41 @@
     "articleSection": "{{ (site.GetPage .Section).Title | safeJS }}",
     "name": "{{ .Title | safeJS }}",
     "headline": "{{ .Title | safeJS }}",
-    {{ with .Description }}"description": "{{ . | safeJS }}",{{ end }}
-    {{ with .Summary }}"abstract": "{{ . | safeJS }}",{{ end }}
-    {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
-    "url" : "{{ .Permalink }}",
-    "author" : {
+    {{ with .Description }}
+      "description": "{{ . | safeJS }}",
+    {{ end }}
+    {{ with .Summary }}
+      "abstract": "{{ . | safeJS }}",
+    {{ end }}
+    {{ with .Site.LanguageCode }}
+      "inLanguage": "{{ . }}",
+    {{ end }}
+    "url": "{{ .Permalink }}",
+    "author": {
       "@type": "Person",
-      "name": "{{ .Site.Language.Params.Author.name | safeJS }}"
+      "name": "{{ .Site.Language.Params.Author.name | default (.Site.Title | safeJS) }}"
     },
-    {{ with .PublishDate }}"copyrightYear": "{{ .Format "2006" }}",{{ end }}
-    {{ with .Date }}"dateCreated": "{{ .Format $iso8601 }}",{{ end }}
-    {{ with .PublishDate }}"datePublished": "{{ .Format $iso8601 }}",{{ end }}
-    {{ with .ExpiryDate }}"expires": "{{ .Format $iso8601 }}",{{ end }}
-    {{ with .Lastmod }}"dateModified": "{{ .Format $iso8601 }}",{{ end }}
-    {{ if .Keywords }}
-    {{ with .Keywords }}"keywords": {{ . }},{{ end }}
+    {{ with .PublishDate }}
+      "copyrightYear": "{{ .Format "2006" }}",
+    {{ end }}
+    {{ with .Date }}
+      "dateCreated": "{{ .Format $iso8601 }}",
+    {{ end }}
+    {{ with .PublishDate }}
+      "datePublished": "{{ .Format $iso8601 }}",
+    {{ end }}
+    {{ with .ExpiryDate }}
+      "expires": "{{ .Format $iso8601 }}",
+    {{ end }}
+    {{ with .Lastmod }}
+      "dateModified": "{{ .Format $iso8601 }}",
+    {{ end }}
+    {{ with .Keywords }}
+      "keywords": "{{ delimit . "," }}",
     {{ else }}
-    {{ with .Params.tags }}"keywords": {{ . }},{{ end }}
+      {{ with .Params.tags }}
+        "keywords": "{{ delimit . "," }}",
+      {{ end }}
     {{ end }}
     "mainEntityOfPage": "true",
     "wordCount": "{{ .WordCount }}"
