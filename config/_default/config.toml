@@ -10,5 +10,11 @@ enableRobotsTXT = true
 paginate = 10
 summaryLength = 0
 
+[taxonomies]
+  tag = "tags"
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[params]
+  mainSections = ["posts"]
