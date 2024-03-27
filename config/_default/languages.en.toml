@@ -8,14 +8,15 @@ copyright = "&copy; 2024. Seth Rose. All Rights Reserved."
 
 [params]
 dateFormat = "2 January 2006"
-description = "My awesome website"
+description = "Seth Rose >> Portfolio"
 # mainSections = ["section1", "section2"]
 
 [params.author]
 name = "Seth Rose"
 image = "img/profile.png"
-headline = "Turning caffeine into code</br>while trying not to break the internet."
-bio = "When I'm not battling corporate inefficiencies or integrating systems that were never meant to talk to each other, you'll catch me on 𝕏 (Twitter), discussing the latest advancements in AI & machine learning, and their potential to revolutionize industries. I'm always sharpening my skills in full stack development or #buildinpublic - because why not add a few more programming languages to the mix? My secret weapons are my ADHD-fueled brain, a steady stream of caffeine, and an undying love for solving problems that make mere mortals cry."
+headline = "Turning caffeine into code</br>while trying not to break the internet"
+bio = "• Battling corporate chaos & teaching systems to talk.<br>• You'll find me on 𝕏, discussing code, AI & sharing memes.<br>• Expanding my dev skills while <em>#buildinpublic</em>. Why not add more frameworks to the mix?<br>• Powered by ADHD, endless caffeine & a knack for solving daunting problems."
+
 links = [
   { x-twitter = "https://x.com/TheSethRose" },
   { email = "mailto:admin@sethrose.dev" },
