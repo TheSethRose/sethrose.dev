@@ -141,7 +141,7 @@ module.exports = {
               },
               'p.active': {
                 "text-decoration-color": theme("colors.primary.600 / 1"),
-              }
+              },
             },
           },
           invert: {
