@@ -1,0 +1,37 @@
+<section>
+  <article class="flex flex-col items-center justify-center text-center">
+    <header class="mb-8 px-4 py-8 flex flex-col items-center">
+      <div class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-16 px-6">
+        <div class="md:w-1/2 text-center md:text-left">
+          <h1 class="text-3xl font-bold mb-2 text-gray-200">{{ .Site.Language.Params.Author.intro }}</h1>
+          <h2 class="text-4xl font-semibold mb-8 text-gray-900 leading-tight">
+            {{ with .Site.Language.Params.Author.headline }}
+              {{ . | markdownify | emojify }}
+            {{ end }}
+          </h2>
+          <div class="flex justify-center md:justify-start space-x-6 text-gray-700">
+            {{ partialCached "author-links.html" . }}
+          </div>
+        </div>
+        <div class="md:w-5/12 mt-8 md:mt-0">
+          {{ $lazy := .Params.enableImageLazyLoading | default .Site.Params.enableImageLazyLoading | default true }}
+          {{ $altText := ($.Site.Language.Params.Author.name | default "Author") }}
+          {{ with .Site.Language.Params.Author.image }}
+            {{ $authorImage := resources.Get . }}
+            {{ if $authorImage }}
+              <div class="relative rounded-full shadow-2xl overflow-hidden border-8 border-white transform hover:scale-105 transition duration-500 ease-in-out">
+                {{ $imgClass := "w-full h-auto" }}
+                {{ partial "picture.html" (dict "img" $authorImage "alt" $altText "class" $imgClass "lazy" $lazy) }}
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </header>
+  </article>
+</section>
+
+<section>
+  {{ partial "recent-articles.html" . }}
+</section>
+
