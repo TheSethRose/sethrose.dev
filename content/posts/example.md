@@ -1,7 +1,9 @@
 ---
 title: "My First Blog Post"
+subtitle:
 date: 2024-03-27
-draft: true
+time: 5
+draft: false
 tags: ["blog"]
 ---
 
