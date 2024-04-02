@@ -1,77 +1,42 @@
-<article class="mt-6 flex max-w-prose flex-row">
-  {{- $images := $.Resources.ByType "image" }}
-  {{- $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
-  {{- $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
-  {{- with $feature }}
-    <div class="flex-none pe-4 sm:pe-6 ">
-      <a
-        href="{{ with $.Params.externalUrl }}
-          {{ . }}
-        {{ else }}
-          {{ $.RelPermalink }}
-        {{ end }}"
-        aria-label="{{ $.Title | emojify }}"
-      >
-        <img
-          alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
-          {{ if eq .MediaType.SubType "svg" }}
-            class="w-24 max-w-[6rem] max-h-[4.5rem] rounded-md sm:max-h-[7.5rem] sm:w-40
-            sm:max-w-[10rem]" src="{{ .RelPermalink }}"
-          {{ else }}
-            class="w-24 rounded-md sm:w-40" srcset="
-            {{- (.Fill "160x120 smart").RelPermalink }}
-            160w, {{- (.Fill "320x240 smart").RelPermalink }} 2x"
-            src="{{ (.Fill "160x120 smart").RelPermalink }}" width="160" height="120"
+  <article class="max-w-5xl mx-auto rounded-lg border border-slate-200 bg-white p-8 shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-xl dark:border-slate-700 dark:bg-slate-800">
+    <header class="article-header">
+      <div class="article-details space-y-4">
+        <div class="article-title-wrapper">
+          <h2 class="article-title text-3xl font-semibold tracking-tight text-slate-800 dark:text-slate-100">
+            <a href="{{ .RelPermalink }}" class="hover:text-primary-600 dark:hover:text-primary-400">{{ .Params.Title | emojify }}</a>
+          </h2>
+          {{ with .Params.subtitle }}
+          <h3 class="article-subtitle mt-2 text-xl text-slate-600 dark:text-slate-400">
+            {{ . }}
+          </h3>
           {{ end }}
-          {{ if $.Site.Params.enableImageLazyLoading | default true }}
-            loading="lazy"
+        </div>
+        <footer class="article-time mt-4 flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time mr-2 inline-block h-5 w-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z"></path>
+              <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4"></path>
+              <circle cx="18" cy="18" r="4"></circle>
+              <path d="M15 3v4"></path>
+              <path d="M7 3v4"></path>
+              <path d="M3 11h16"></path>
+              <path d="M18 16.496v1.504l1 1"></path>
+            </svg>
+            <time class="article-time--published">{{ .Date.Format "Jan 02, 2006" }}</time>
+          </div>
+          {{ if .Params.showReadingTime | default (.Site.Params.article.showReadingTime | default false) }}
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock mr-2 inline-block h-5 w-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z"></path>
+              <circle cx="12" cy="12" r="9"></circle>
+              <polyline points="12 7 12 12 15 15"></polyline>
+            </svg>
+            <time class="article-time--reading">
+              {{ .Params.time }} minute{{ if gt .Params.time 1 }}s{{ end }} read
+            </time>
+          </div>
           {{ end }}
-        />
-      </a>
-    </div>
-  {{- end }}
-  <div>
-    <h3 class="flex items-center text-xl font-semibold">
-      {{ with .Params.externalUrl }}
-        <div>
-          <a
-            class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-            href="{{ . }}"
-            target="_blank"
-            rel="external"
-            >{{ $.Title | emojify }}</a
-          >
-          <span
-            class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500"
-            title="{{ i18n "list.externalurl_title" }}"
-          >
-            <span class="rtl:hidden">&#8599;</span>
-            <span class="ltr:hidden">&#8598;</span>
-          </span>
-        </div>
-      {{ else }}
-        <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="{{ .RelPermalink }}"
-          >{{ .Title | emojify }}</a
-        >
-      {{ end }}
-      {{ if and .Draft .Site.Params.article.showDraftLabel }}
-        <div class="ms-2">
-          {{ partial "badge.html" (i18n "article.draft" | emojify) }}
-        </div>
-      {{ end }}
-      {{ if templates.Exists "partials/extend-article-link.html" }}
-        {{ partial "extend-article-link.html" . }}
-      {{ end }}
-    </h3>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      {{ partial "article-meta.html" . }}
-    </div>
-    {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="prose py-1 dark:prose-invert">
-        {{ .Summary | emojify }}
+        </footer>
       </div>
-    {{ end }}
-  </div>
-</article>
+    </header>
+  </article>

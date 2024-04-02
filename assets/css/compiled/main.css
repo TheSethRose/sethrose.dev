@@ -2081,6 +2081,10 @@ code {
   height: 12rem;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -2101,10 +2105,6 @@ code {
   max-height: 10rem;
 }
 
-.max-h-\[4\.5rem\] {
-  max-height: 4.5rem;
-}
-
 .min-h-0 {
   min-height: 0px;
 }
@@ -2113,16 +2113,16 @@ code {
   width: 3rem;
 }
 
-.w-24 {
-  width: 6rem;
-}
-
 .w-36 {
   width: 9rem;
 }
 
 .w-48 {
   width: 12rem;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 .w-6 {
@@ -2167,10 +2167,6 @@ code {
 
 .max-w-\[10rem\] {
   max-width: 10rem;
-}
-
-.max-w-\[6rem\] {
-  max-width: 6rem;
 }
 
 .max-w-full {
@@ -2274,6 +2270,12 @@ code {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.5rem * var(--tw-space-x-reverse));
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 .self-center {
@@ -2433,6 +2435,10 @@ code {
   padding: 1rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -2519,10 +2525,6 @@ code {
   padding-inline-end: 0.75rem;
 }
 
-.pe-4 {
-  padding-inline-end: 1rem;
-}
-
 .pe-5 {
   padding-inline-end: 1.25rem;
 }
@@ -2561,10 +2563,6 @@ code {
 
 .text-end {
   text-align: end;
-}
-
-.align-top {
-  vertical-align: top;
 }
 
 .align-text-bottom {
@@ -2794,10 +2792,20 @@ code {
   transition-duration: 150ms;
 }
 
+.transition-shadow {
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-transform {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
 }
 
 .duration-500 {
@@ -2933,6 +2941,12 @@ code {
 
 .hover\:underline-offset-2:hover {
   text-underline-offset: 2px;
+}
+
+.hover\:shadow-xl:hover {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .focus\:translate-y-0:focus {
@@ -3158,20 +3172,8 @@ code {
     display: none;
   }
 
-  .sm\:max-h-\[7\.5rem\] {
-    max-height: 7.5rem;
-  }
-
   .sm\:w-1\/2 {
     width: 50%;
-  }
-
-  .sm\:w-40 {
-    width: 10rem;
-  }
-
-  .sm\:max-w-\[10rem\] {
-    max-width: 10rem;
   }
 
   .sm\:flex-row {
@@ -3194,10 +3196,6 @@ code {
   .sm\:py-10 {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-  }
-
-  .sm\:pe-6 {
-    padding-inline-end: 1.5rem;
   }
 
   .sm\:pt-10 {
