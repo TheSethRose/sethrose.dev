@@ -14,8 +14,8 @@ description = "Seth Rose >> Portfolio"
 [params.author]
 name = "Seth Rose"
 image = "img/profile.png"
-intro = "👋 Hi, I'm Seth!"
-headline = "Turning caffeine into code</br>while trying not to break the internet"
+header = "👋 Hi, I'm Seth!"
+headline = "<div class='mb-3'>As a programmer & entrepreneur, I code for neurodiverse minds, like my own.</div><div>My goal is to harness the power of AI to create a better future — hopefully sans doomsday.</div>"
 bio = "• Battling corporate chaos & teaching systems to talk.<br>• You'll find me on 𝕏, discussing code, AI & sharing memes.<br>• Expanding my dev skills while <em>#buildinpublic</em>. Why not add more frameworks to the mix?<br>• Powered by ADHD, endless caffeine & a knack for solving daunting problems."
 
 links = [
