@@ -16,14 +16,23 @@
   weight = 10
 
 [[main]]
+  name = "Mission"
+  url = "/mission"
+  weight = 11
+
+[[main]]
   name = "Blog"
   pageRef = "posts"
   weight = 20
 
 [[main]]
-  name = "Tags"
-  pageRef = "tags"
-  weight = 30
+  name = "GitHub"
+  url = "https://github.com/TheSethRose"
+  weight = 40
+  [main.params]
+    icon = "github"
+    showName = false
+    target = "_blank"
 
 [[main]]
   identifier = "search"
@@ -45,3 +54,11 @@
 #   name = "Tags"
 #   pageRef = "tags"
 #   weight = 10
+
+[[footer]]
+  name = "Tags"
+  pageRef = "tags"
+  weight = 10
+  [footer.params]
+    icon = "tag"
+    showName = true
