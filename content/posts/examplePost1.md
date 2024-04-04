@@ -4,7 +4,7 @@ subtitle:
 date: 2024-03-27
 time: 5
 draft: true
-tags: ["blog"]
+tags: ['']
 ---
 
 ## Introduction
